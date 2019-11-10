@@ -1,0 +1,48 @@
+{
+  "name": "notes-app-api",
+  "version": "1.1.0",
+  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "main": "handler.js",
+  "scripts": {
+    "test": "serverless-bundle test"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnomalyInnovations/serverless-nodejs-starter.git"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.568.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-jest": "^23.0.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^2.7.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "serverless-bundle": "^1.2.5",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-offline": "^5.3.3"
+  },
+  "dependencies": {
+    "uuid": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.{html,css,scss,json}": [
+      "pretty-quick --staged",
+      "git add"
+    ]
+  }
+}
