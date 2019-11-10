@@ -1,4 +1,4 @@
-export const hello = async (event, context) => {
+export const hello = async () => {
   return {
     statusCode: 200,
     body: JSON.stringify({
@@ -11,7 +11,7 @@ export const hello = async (event, context) => {
 };
 
 const message = ({ time, ...rest }) =>
-  new Promise((resolve, reject) =>
+  new Promise((resolve) =>
     setTimeout(() => {
       resolve(`${rest.copy} (with a delay)`);
     }, time * 1000)
